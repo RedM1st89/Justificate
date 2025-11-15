@@ -5,6 +5,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    "baseUrl": ".",
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -19,7 +20,12 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@/components/*": ["components/*"],
+      "@/components/ui/*": ["components/ui/*"],
+      "@/app/*": ["app/*"],
+      "@/lib/*": ["lib/*"],
+      "types": ["@types/xlsx"]
     }
   },
   "include": [
