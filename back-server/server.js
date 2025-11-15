@@ -1,10 +1,16 @@
-    // server.js
-    const mongoose = require('mongoose');
-    require('dotenv').config(); // If using dotenv for connection string
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+require('dotenv').config();
+// Inicia express y lo guarda en la variable app
+const app = express();
+// Llama la funcion cors para que todo funcione
+app.use(cors());
 
-    const dbURI = process.env.MONGO_URI || 'mongodb://localhost:27017/hackathon-test'; // Replace mydatabase
-
-    mongoose.connect(dbURI)
-        .then(() => console.log('Connected to MongoDB'))
-        .catch(err => console.error('MongoDB connection error:', err));
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('Conectado'))
+.catch((err) => console.error('Error:', err));
 
