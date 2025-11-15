@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-back-server/
+/back-server/node_modules
 /.pnp
 .pnp.*
 .yarn/*
